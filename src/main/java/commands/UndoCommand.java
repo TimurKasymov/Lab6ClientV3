@@ -17,24 +17,16 @@ public class UndoCommand extends CommandBase implements Command {
     @Override
     public boolean execute(String[] args) {
         var console = commandManager.getMessageHandler();
-        try{
-            var number = 0;
-            for(;;){
-                number = commandManager.getInputService().getInt();
-                if(number > 0)
-                    break;
-                console.displayToUser("number of commands must by > 0");
-            }
-            var request = new UndoRequest(number);
+        try {
+            var num = Integer.parseInt(args[0]);
+            if(num < 1)
+                throw new NumberFormatException();
+            var request = new UndoRequest(num);
             sendToServer(request);
         }
-        catch (CommandInterruptionException e){
-            if(e.getInterruptionCause() == InterruptionCause.EXIT)
-                console.displayToUser("adding product was successfully canceled");
-            else{
-                console.displayToUser("adding product was canceled by entered command");
-                commandManager.executeCommand(e.getEnteredCommand());
-            }
+        catch (NumberFormatException e){
+            var commandMessageHandler = commandManager.getMessageHandler();
+            commandMessageHandler.displayToUser("number of commands to undo must be a number > 0");
         }
         return true;
     }

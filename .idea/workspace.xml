@@ -4,97 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c91f9f1b-0326-4269-8bc4-c3f3478c1420" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/DateTimeAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/converters/SerializationManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/loggerUtils/LoggerManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/models/Coordinates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/models/InputMedium.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/models/Organization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/models/OrganizationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/models/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/models/Products.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/models/UnitOfMeasure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/AddRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ClearRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ExecuteScriptRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/FilterByManufactureCostRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/FilterGreaterThanPriceRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/HelpRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/HistoryRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/InfoRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/LoadFileRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/PrintUniqueUnitOfMeasureRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/RemoveByIdRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/RemoveFirstRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ReorderRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ShowRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/UndoRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/UpdateByIdRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/AddResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/ClearResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/ExecuteScriptResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/FilterByManufactureCostResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/FilterGreaterThanPriceResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/HelpResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/HistoryResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/InfoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/LoadFileResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/PrintUniqueUnitOfMeasureResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/RemoveByIdResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/RemoveFirstResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/ReorderResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/ShowResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/UndoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/responses/UpdateByIdResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/utils/Commands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/AddCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/ClearCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/CommandBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/ExecuteScriptCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/FilterByManufactureCostCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/FilterGreaterThanPriceCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/HelpCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/HistoryCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/InfoCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/PrintUniqueUnitOfMeasureCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveByIdCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveFirstCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/ReorderCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/ShowCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/UndoCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/UpdateByIdCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/container/CommandsContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/CommandInterruptionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/FileLoadingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/InterruptionCause.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/NoAccessToFileException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/interfaces/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/interfaces/CommandManagerCustom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/multithreading/HandlingServerResponseThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/network_utils/ReceivingManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/network_utils/SendingManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/network_utils/TCPServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/CommandManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/InputService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/MessageHandler.java" afterDir="false" />
+    <list default="true" id="c91f9f1b-0326-4269-8bc4-c3f3478c1420" name="Changes" comment="client">
+      <change afterPath="$PROJECT_DIR$/script.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/ScriptFilePacker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ExecuteScriptRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ExecuteScriptRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/ExecuteScriptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/UndoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/UndoCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +61,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/javaLabs/clientNEW/common/src/main/java/src/network",
+    "last_opened_file_path": "C:/javaLabs/clientNEW",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -153,11 +71,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\javaLabs\clientNEW" />
       <recent name="C:\javaLabs\clientNEW\common\src\main\java\src\network" />
       <recent name="C:\javaLabs\clientNEW\common\src\main\java\src" />
       <recent name="C:\javaLabs\clientNEW\src\main\java\commands" />
       <recent name="C:\javaLabs\clientNEW\src\main\java" />
-      <recent name="C:\javaLabs\clientNEW\src\main\java\service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\javaLabs\clientNEW" />
@@ -209,7 +127,8 @@
       <workItem from="1680259511796" duration="33462000" />
       <workItem from="1680344824089" duration="6702000" />
       <workItem from="1680355171693" duration="2064000" />
-      <workItem from="1680357673279" duration="42976000" />
+      <workItem from="1680357673279" duration="48062000" />
+      <workItem from="1680772853904" duration="11403000" />
     </task>
     <servers />
   </component>
@@ -229,6 +148,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="client" />
+    <option name="LAST_COMMIT_MESSAGE" value="client" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/clientNEW$Main__1_.ic" NAME="Main (1) Coverage Results" MODIFIED="1680418628048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
