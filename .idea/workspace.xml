@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91f9f1b-0326-4269-8bc4-c3f3478c1420" name="Changes" comment="client">
-      <change afterPath="$PROJECT_DIR$/script.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/ScriptFilePacker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ExecuteScriptRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ExecuteScriptRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/ExecuteScriptCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/UndoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/UndoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network_utils/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network_utils/TCPServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,20 +50,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/javaLabs/clientNEW",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/javaLabs/clientNEW&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\javaLabs\clientNEW" />
@@ -128,8 +123,17 @@
       <workItem from="1680344824089" duration="6702000" />
       <workItem from="1680355171693" duration="2064000" />
       <workItem from="1680357673279" duration="48062000" />
-      <workItem from="1680772853904" duration="11403000" />
+      <workItem from="1680772853904" duration="12758000" />
+      <workItem from="1681381543751" duration="6917000" />
     </task>
+    <task id="LOCAL-00001" summary="client">
+      <created>1681229011908</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681229011908</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

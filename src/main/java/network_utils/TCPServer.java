@@ -22,7 +22,7 @@ public class TCPServer {
                 if(socketChannel != null)
                     socketChannel.close();
                 this.socketChannel = SocketChannel.open();
-                var socketAddress = new InetSocketAddress("localhost", 23588);
+                var socketAddress = new InetSocketAddress("localhost", 23589);
                 socketChannel.bind(socketAddress);
                 socketChannel.configureBlocking(false);
                 socketChannel.connect(host);
