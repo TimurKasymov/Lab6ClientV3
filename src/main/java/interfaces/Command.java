@@ -1,8 +1,7 @@
 package interfaces;
 
-import src.network.requests.Request;
-import src.network.responses.Response;
 
+import src.network.Response;
 
 public interface Command {
     /** executes the command */

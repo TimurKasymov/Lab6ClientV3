@@ -4,6 +4,7 @@ import container.CommandsContainer;
 import exceptions.CommandInterruptionException;
 import src.models.*;
 import src.models.Product;
+import src.utils.Commands;
 
 import java.util.Collection;
 import java.util.InputMismatchException;
@@ -72,6 +73,77 @@ public class InputService {
                 if (CommandsContainer.contains(str))
                     throw new CommandInterruptionException(str);
                 return Integer.parseInt(str);
+            } catch (InputMismatchException | NumberFormatException inputMismatchException) {
+                messageHandler.displayToUser("This value must be a number. Try again. ");
+            }
+        }
+    }
+
+    public String validateScriptName(String scriptCommand) {
+        for (; ; ) {
+            try {
+                var split = scriptCommand.split(" ");
+                if(!scriptCommand.contains(Commands.EXECUTE_SCRIPT) || split.length != 2)
+                    return null;
+                if(split[1].split("\\.").length == 2 && split[1].split("\\.")[1].equals("txt"))
+                    return split[1];
+                return null;
+            } catch (Exception e) {
+                messageHandler.displayToUser("please, provide the name of the script file with .txt extension");
+            }
+        }
+    }
+
+    public Product inputProduct(String enteredCommand) throws CommandInterruptionException {
+        messageHandler.displayToUser("adding product..");
+
+        var name = inputName();
+        var coord = inputCoordinates();
+        var price = inputPrice();
+        var manufCost = inputManufactureCost();
+        var unit = inputUnitOfMeasure();
+
+        int yesOrNo = 0;
+        for( ; ; ) {
+            try {
+                messageHandler.displayToUser("enter a number: ");
+                messageHandler.displayToUser("should we add organization? enter the number: 1 - Yes or 2 - No");
+                yesOrNo = getInt();
+                if(yesOrNo != 1 && yesOrNo != 2)
+                    continue;
+                if(yesOrNo == 2)
+                    messageHandler.displayToUser("organization will not be defined");
+                break;
+            } catch (InputMismatchException e) {
+                messageHandler.displayToUser("enter a number: ");
+            }
+        }
+        var prod = new Product(enteredCommand.split(" ").length == 2
+                ? Long.parseLong(enteredCommand.split(" ")[1]) : 0L, name, coord, price, manufCost,
+                unit, yesOrNo == 1 ? inputOrganization() : null);
+        return prod;
+    }
+
+    public Long getID(String enteredCommand) throws NoSuchElementException, CommandInterruptionException {
+        for (; ; ) {
+            try {
+                String str;
+                if(enteredCommand != null && enteredCommand.split(" ").length == 2){
+                    str = enteredCommand;
+                }
+                str = scanner.nextLine();
+                if (str.equals("")) {
+                    messageHandler.displayToUser("This value cannot be empty. Try again");
+                    continue;
+                }
+                if (CommandsContainer.contains(str))
+                    throw new CommandInterruptionException(str);
+                var val = Long.parseLong(str);
+                if(val < 1){
+                    messageHandler.displayToUser("This value must be > 0. Try again");
+                    continue;
+                }
+                return val;
             } catch (InputMismatchException | NumberFormatException inputMismatchException) {
                 messageHandler.displayToUser("This value must be a number. Try again. ");
             }
@@ -158,14 +230,22 @@ public class InputService {
         }
     }
 
+    public float inputPrice() throws NoSuchElementException, CommandInterruptionException{
+        return inputPrice(null);
+    }
     /**
      * method for taking price input
      */
-    public float inputPrice() throws NoSuchElementException, CommandInterruptionException {
+    public float inputPrice(String command) throws NoSuchElementException, CommandInterruptionException {
         for (; ; ) {
             try {
+                String str;
                 messageHandler.displayToUser("Enter the price of the product: ");
-                var str = scanner.nextLine();
+                if(command != null && command.split(" ").length == 2){
+                    str = command;
+                }
+                else
+                    str = scanner.nextLine().trim();
                 if (str.equals("")) {
                     messageHandler.displayToUser("This value cannot be empty. Try again");
                     continue;
@@ -184,14 +264,22 @@ public class InputService {
         }
     }
 
+    public Double inputManufactureCost() throws NoSuchElementException, CommandInterruptionException {
+        return inputManufactureCost(null);
+    }
     /**
      * method for taking price input
      */
-    public Double inputManufactureCost() throws NoSuchElementException, CommandInterruptionException {
+    public Double inputManufactureCost(String command) throws NoSuchElementException, CommandInterruptionException {
         for (; ; ) {
             try {
                 messageHandler.displayToUser("Enter manufacture cost: ");
-                var str = scanner.nextLine().trim();
+                String str;
+                if(command != null && command.split(" ").length == 2){
+                    str = command;
+                }
+                else
+                    str = scanner.nextLine().trim();
                 if (str.equals("")) {
                     messageHandler.displayToUser("This value cannot be empty. Try again");
                     continue;

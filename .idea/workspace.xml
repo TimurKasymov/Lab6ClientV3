@@ -5,8 +5,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91f9f1b-0326-4269-8bc4-c3f3478c1420" name="Changes" comment="client">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/MessageType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/network/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/src/utils/Argument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/container/SettingsContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/InputManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/settings/SettingsModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/common/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/AddRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ClearRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ExecuteScriptRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/FilterByManufactureCostRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/FilterGreaterThanPriceRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/HelpRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/HistoryRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/InfoRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/LoadFileRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/PrintUniqueUnitOfMeasureRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/RemoveByIdRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/RemoveFirstRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ReorderRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/Request.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/ShowRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/UndoRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/requests/UpdateByIdRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/AddResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/ClearResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/ExecuteScriptResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/FilterByManufactureCostResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/FilterGreaterThanPriceResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/HelpResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/HistoryResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/InfoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/LoadFileResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/PrintUniqueUnitOfMeasureResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/RemoveByIdResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/RemoveFirstResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/ReorderResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/Response.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/ShowResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/UndoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/network/responses/UpdateByIdResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/src/utils/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/src/utils/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/AddCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/ClearCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/CommandBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/ExecuteScriptCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/FilterByManufactureCostCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/FilterGreaterThanPriceCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/HelpCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/HistoryCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/InfoCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/PrintUniqueUnitOfMeasureCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/RemoveByIdCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/RemoveFirstCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/ReorderCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/ShowCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/UndoCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/UpdateByIdCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/container/CommandsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/container/CommandsContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaces/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/CommandManagerCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaces/CommandManagerCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/multithreading/HandlingServerResponseThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/multithreading/HandlingServerResponseThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network_utils/ReceivingManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network_utils/ReceivingManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/network_utils/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network_utils/TCPServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/InputService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/InputService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/ScriptFilePacker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ScriptFilePacker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +97,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="package.json" />
         <option value="Class" />
       </list>
     </option>
@@ -61,7 +133,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -124,7 +196,10 @@
       <workItem from="1680355171693" duration="2064000" />
       <workItem from="1680357673279" duration="48062000" />
       <workItem from="1680772853904" duration="12758000" />
-      <workItem from="1681381543751" duration="6917000" />
+      <workItem from="1681381543751" duration="17347000" />
+      <workItem from="1681557380170" duration="22522000" />
+      <workItem from="1681636803311" duration="25002000" />
+      <workItem from="1681727991782" duration="698000" />
     </task>
     <task id="LOCAL-00001" summary="client">
       <created>1681229011908</created>

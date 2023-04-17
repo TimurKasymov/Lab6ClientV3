@@ -5,14 +5,11 @@ import src.utils.Commands;
 import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class ScriptFilePacker {
-    private final HashMap<String, List<String>> packedScripts = new HashMap<>();
+    private final LinkedHashMap<String, List<String>> packedScripts = new LinkedHashMap<>();
     private boolean containsRecursion;
     public void pack(String fileName)  {
         try{
@@ -37,7 +34,7 @@ public class ScriptFilePacker {
         }
     }
 
-    public HashMap<String, List<String>>  getPackedScripts(){
+    public LinkedHashMap<String, List<String>> getPackedScripts(){
         return packedScripts;
     }
 

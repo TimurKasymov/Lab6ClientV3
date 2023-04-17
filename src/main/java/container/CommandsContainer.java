@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CommandsContainer {
     private static List<String> commandNames;
-    public static void setCommands(List<String> commands){
+    synchronized public static void setCommands(List<String> commands){
         commandNames = commands;
     }
 

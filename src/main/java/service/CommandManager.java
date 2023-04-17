@@ -1,7 +1,8 @@
 package service;
 
-import commands.*;
 import container.CommandsContainer;
+import exceptions.CommandInterruptionException;
+import exceptions.InterruptionCause;
 import interfaces.Command;
 import interfaces.CommandManagerCustom;
 import network_utils.SendingManager;
@@ -9,25 +10,26 @@ import network_utils.TCPServer;
 import service.InputService;
 import service.MessageHandler;
 import src.converters.SerializationManager;
-import src.network.requests.LoadFileRequest;
-import src.network.responses.LoadFileResponse;
-import src.network.responses.Response;
+import src.network.MessageType;
+import src.network.Request;
+import src.network.Response;
 import src.utils.Commands;
 
 import java.nio.channels.SocketChannel;
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.stream.Collectors;
 
 public class CommandManager implements CommandManagerCustom {
 
     private final InputService inputService;
-    private final HashMap<String, Command> commandsMap;
-
     private final LinkedList<String> commandHistory;
     private final MessageHandler messageHandler;
     private SendingManager sendingManager;
     private SerializationManager serializationManager;
     private String collectionFileName;
-
+    private ConcurrentLinkedDeque<Response> gatewayToResponseThread;
+    private InputManager inputManager;
 
     /**
      * Constructor for making a CommandManager
@@ -40,30 +42,22 @@ public class CommandManager implements CommandManagerCustom {
         this.inputService = inputService;
         this.serializationManager = new SerializationManager();
         commandHistory = new LinkedList<>();
-        commandsMap = new HashMap<>();
-        commandsMap.put("add", new AddCommand(this));
-        commandsMap.put("clear", new ClearCommand(this));
-        commandsMap.put("update_by_id", new UpdateByIdCommand(this));
-        commandsMap.put("execute_script", new ExecuteScriptCommand(this));
-        commandsMap.put("show", new ShowCommand(this));
-        commandsMap.put("filter_greater_than_price", new FilterGreaterThanPriceCommand(this));
-        commandsMap.put("print_unique_unit_of_measure", new PrintUniqueUnitOfMeasureCommand(this));
-        commandsMap.put("remove_by_id", new RemoveByIdCommand(this));
-        commandsMap.put("remove_first", new RemoveFirstCommand(this));
-        commandsMap.put("reorder", new ReorderCommand(this));
-        commandsMap.put("history", new HistoryCommand(this));
-        commandsMap.put("help", new HelpCommand(this));
-        commandsMap.put("info", new InfoCommand(this));
-        commandsMap.put("filter_by_manufacture_cost", new FilterByManufactureCostCommand(this));
-        commandsMap.put("undo_commands", new UndoCommand(this));
-        CommandsContainer.setCommands(commandsMap.keySet().stream().toList());
+        this.inputManager = new InputManager();
+
     }
 
-    public void loadCollection(){
-        var collectionFileName = getCollectionFileName();
-        var request = new LoadFileRequest(collectionFileName);
-        sendingManager.send(serializationManager.serialize(request));
+    public void setGatewayToResponseThread(ConcurrentLinkedDeque<Response> gatewayToResponseThread){
+        this.gatewayToResponseThread = gatewayToResponseThread;
     }
+
+    public void loadCollection() {
+        var collectionFileName = getCollectionFileName();
+        var request = new Request(MessageType.LOAD_COLLECTION);
+        request.requiredArguments.add(collectionFileName);
+        var data = serializationManager.serialize(request);
+        sendingManager.send(data);
+    }
+
     private String getCollectionFileName() {
         for (; ; ) {
             try {
@@ -99,37 +93,39 @@ public class CommandManager implements CommandManagerCustom {
         var commandUnits = userInput.trim().toLowerCase().split(" ", 2);
 
         var enteredCommand = commandUnits[0].trim().toLowerCase();
-        if(enteredCommand.contains(Commands.LOAD_COLLECTION)){
+        if (enteredCommand.contains(Commands.LOAD_COLLECTION)) {
             loadCollection();
             return true;
         }
-        if (!commandsMap.containsKey(enteredCommand)) {
+        if (!gatewayToResponseThread.getFirst().commandRequirements.containsKey(enteredCommand)) {
             messageHandler.displayToUser("Unknown command. Write help for help.");
             return false;
         }
-        var command = commandsMap.get(enteredCommand);
-        if(command == null)
-            return false;
-        commandHistory.add(enteredCommand);
-        command.execute(Arrays.copyOfRange(commandUnits, 1, commandUnits.length));
+        var commandParams = gatewayToResponseThread.getFirst().commandRequirements.get(enteredCommand);
+        var request = new Request((MessageType) Arrays
+                .stream(MessageType.values())
+                .filter(t-> Objects.equals(t.getCommandDesc(), enteredCommand))
+                .toArray()[0]);
+        for (var pair : commandParams) {
+            for (int i = 0; i < pair.getRight(); i++) {
+                try {
+                    var arg = inputManager.getReadyArgument(pair.getLeft(), userInput);
+                    request.requiredArguments.add(arg);
+                } catch (CommandInterruptionException e) {
+                    if (e.getInterruptionCause() == InterruptionCause.EXIT)
+                        messageHandler.displayToUser("adding product was successfully canceled");
+                    else {
+                        messageHandler.displayToUser("adding product was canceled by entered command");
+                        executeCommand(e.getEnteredCommand());
+                    }
+                }
+            }
+        }
+        var data = serializationManager.serialize(request);
+        sendingManager.send(data);
         return true;
     }
 
-    @Override
-    public void handleResponse(Response response) {
-        if (response.getName().equals(Commands.LOAD_COLLECTION)) {
-            var loadResp = (LoadFileResponse) response;
-            if (loadResp.successfully) {
-                messageHandler.displayToUser("Collection was loaded successfully");
-            } else {
-                messageHandler.displayToUser("Collection was not loaded");
-                messageHandler.displayToUser("To try again load the collection enter: load_collection");
-            }
-            return;
-        }
-        var command = commandsMap.get(response.getName());
-        command.handleResponse(response);
-    }
 
     @Override
     public InputService getInputService() {

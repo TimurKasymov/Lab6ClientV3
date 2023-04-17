@@ -1,5 +1,6 @@
 package network_utils;
 
+import container.SettingsContainer;
 import org.slf4j.Logger;
 import src.loggerUtils.LoggerManager;
 import java.net.InetSocketAddress;
@@ -22,7 +23,8 @@ public class TCPServer {
                 if(socketChannel != null)
                     socketChannel.close();
                 this.socketChannel = SocketChannel.open();
-                var socketAddress = new InetSocketAddress("localhost", 23589);
+                var port = SettingsContainer.settingsModel.localPort;
+                var socketAddress = new InetSocketAddress("localhost", port);
                 socketChannel.bind(socketAddress);
                 socketChannel.configureBlocking(false);
                 socketChannel.connect(host);

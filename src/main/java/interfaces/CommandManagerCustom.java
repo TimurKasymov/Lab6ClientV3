@@ -5,8 +5,7 @@ import service.InputService;
 import service.MessageHandler;
 import src.converters.SerializationManager;
 import src.models.Product;
-import src.network.requests.Request;
-import src.network.responses.Response;
+import src.network.Response;
 
 import java.nio.channels.SocketChannel;
 import java.util.List;
@@ -20,7 +19,6 @@ public interface CommandManagerCustom {
     public InputService getInputService();
     SendingManager getSendingManager();
     SerializationManager getSerializationManager();
-    void handleResponse(Response response);
     MessageHandler getMessageHandler();
     void loadCollection();
 }

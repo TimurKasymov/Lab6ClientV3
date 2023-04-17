@@ -5,6 +5,7 @@ public interface Commands {
   String INFO = "info";
   String SHOW = "show";
   String ADD = "add";
+
   String UPDATE = "update";
   String REMOVE_BY_ID = "remove_by_id";
   String CLEAR = "clear";

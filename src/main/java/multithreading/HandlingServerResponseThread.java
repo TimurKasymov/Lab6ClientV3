@@ -1,31 +1,27 @@
 package multithreading;
 
-import interfaces.CommandManagerCustom;
+import container.CommandsContainer;
 import network_utils.ReceivingManager;
 import network_utils.TCPServer;
-import service.CommandManager;
-import service.InputService;
 import service.MessageHandler;
 import src.converters.SerializationManager;
-import src.network.responses.Response;
-
-import java.io.IOException;
+import src.network.MessageType;
+import src.network.Response;
 import java.nio.channels.SocketChannel;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class HandlingServerResponseThread extends Thread {
 
     private SocketChannel socketToListen;
-    private final TCPServer tcpServer;
-    private final int DATA_CHUNK = 1024;
     private final ReceivingManager receivingManager;
-    private final CommandManagerCustom commandManagerCustom;
+    private final ConcurrentLinkedDeque<Response> concurrentDequeue;
+    private final MessageHandler messageHandler;
 
-    public HandlingServerResponseThread(TCPServer tcpServer) {
+    public HandlingServerResponseThread(TCPServer tcpServer, ConcurrentLinkedDeque<Response> concurrentDequeue) {
         this.socketToListen = tcpServer.getSocketChannel();
-        this.tcpServer = tcpServer;
-        this.receivingManager = new ReceivingManager(socketToListen, tcpServer);
-        var messageHandler = new MessageHandler();
-        this.commandManagerCustom = new CommandManager(messageHandler, new InputService(messageHandler), socketToListen, tcpServer);
+        this.concurrentDequeue = concurrentDequeue;
+        this.receivingManager = new ReceivingManager(socketToListen, tcpServer, concurrentDequeue);
+        messageHandler = new MessageHandler();
     }
 
     @Override
@@ -36,7 +32,14 @@ public class HandlingServerResponseThread extends Thread {
                 continue;
             var serializer = new SerializationManager();
             var response = (Response) serializer.deserialize(data);
-            commandManagerCustom.handleResponse(response);
+            if(response == null)
+                continue;
+            if (response.messageType == MessageType.ALL_AVAILABLE_COMMANDS) {
+                concurrentDequeue.add(response);
+                CommandsContainer.setCommands(response.commandRequirements.keySet().stream().toList());
+                continue;
+            }
+            messageHandler.displayToUser(response.serverResponseToCommand);
         }
     }
 }
